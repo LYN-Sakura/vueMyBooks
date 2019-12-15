@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>图书管理系统</title>
+		<link rel="stylesheet" href="./css/index.css" />
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/axios.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="dk">
+			<h1>图书管理系统</h1>
+			<header>
+				<input :disabled="isdisabled" type="text" v-focus placeholder="请输入书籍编号" v-model="id" />
+				<input type="text" placeholder="请输入书籍名称" v-model="name" @keydown.enter="add" />
+				<button type="button" @click="add">提交</button>
+			</header>
+			<section>
+				<table border="1">
+					<caption>
+						在线书籍共
+						<span v-text="booksLength()"></span>
+						册
+					</caption>
+					<tr>
+						<th>书籍编号</th>
+						<th>书籍名称</th>
+						<th>更新日期</th>
+						<th>操作</th>
+					</tr>
+					<tr v-for="(v, i) in books" :key="v.id">
+						<td v-text="i + 1"></td>
+						<td v-text="v.name"></td>
+						<td>{{ v.date | format('yyyy-MM-dd') }}</td>
+						<td>
+							<button type="button" @click="upload(v.id, v.name)">修改</button>
+							<button type="button" @click="del(v.id)">删除</button>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</div>
+
+		<script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

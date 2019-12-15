@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@keyframes ss {
+	0% {
+		transform: translate(2px, 2px);
+		box-shadow: none;
+	}
+
+	100% {
+		transform: translate(0, 0);
+		box-shadow: 2px 2px #eee;
+	}
+}
+
+button {
+	border: none;
+	box-shadow: 2px 2px #eee;
+	outline: none;
+	cursor: pointer;
+}
+
+h1 {
+	height: 50px;
+	text-align: center;
+	font-size: 25px;
+	line-height: 50px;
+}
+
+.dk {
+	width: 600px;
+	height: 400px;
+	background-color: palegoldenrod;
+	margin: 50px auto;
+	padding-top: 1px;
+}
+
+header {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 10px;
+	height: 40px;
+}
+
+header input {
+	width: 200px;
+	height: 25px;
+	line-height: 25px;
+	text-indent: 1em;
+	border: none;
+}
+
+header button {
+	padding: 0 10px;
+	height: 25px;
+}
+
+section {
+	min-height: 300px;
+	background: linear-gradient(#eee8aa, #ffffff);
+	border-top: 1px white solid;
+}
+
+section table {
+	width: 600px;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+section table tr {
+	height: 30px;
+	border: 1px solid white;
+	line-height: 30px;
+	text-align: center;
+}
+
+caption span {
+	padding: 0 3px;
+	color:darkred;
+}
+
+/* 修改操作中的按钮样式 */
+
+table td button {
+	padding: 0 3px;
+}
+
+/* 放在最后 */
+button:active {
+	animation: ss 0.2s 1 linear;
+}
